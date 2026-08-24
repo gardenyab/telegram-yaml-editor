@@ -351,20 +351,20 @@
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
       z-index: 1000;
-      padding: 2.5vh 2.5vw;
+      padding: 0;
     }
     .modal.active { display: flex; animation: overlayIn 0.2s ease both; }
     @keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
 
     .modal-card {
-      margin: auto;
+      margin: 0;
       width: 100%;
-      max-width: 1100px;
-      height: 95vh;
+      max-width: none;
+      height: 100%;
       background-color: var(--bg-elev);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -537,12 +537,14 @@
       line-height: 1.25;
       margin: 1.1em 0 0.5em;
     }
-    .tg-message h1 { font-size: 1.9em; border-bottom: 1px solid var(--doc-border); padding-bottom: 0.3em; }
-    .tg-message h2 { font-size: 1.5em; border-bottom: 1px solid var(--doc-border); padding-bottom: 0.25em; }
+    .tg-message h1 { font-size: 1.9em; }
+    .tg-message h2 { font-size: 1.5em; }
     .tg-message h3 { font-size: 1.28em; }
     .tg-message h4 { font-size: 1.1em; }
     .tg-message h5 { font-size: 1em; }
     .tg-message h6 { font-size: 0.9em; color: var(--doc-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    /* Горизонтальная линия-разделитель (та же линия, что была под заголовками, но ставится где угодно) */
+    .tg-message hr { border: none; border-top: 1px solid var(--doc-border); margin: 1.4em 0; }
 
     /* Параграфы, выноски, подписи */
     .tg-message p { margin: 0.7em 0; }
@@ -773,6 +775,90 @@
       .tag-drawer-overlay.open { opacity: 1; pointer-events: auto; }
     }
 
+    /* ---------- Мобильное меню приложения (открыть/сохранить) ---------- */
+    .app-drawer,
+    .app-drawer-overlay,
+    .app-menu-toggle { display: none; }
+
+    @media (max-width: 720px) {
+      /* Кнопка-гамбургер в шапке */
+      .app-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px; height: 40px;
+        background-color: var(--input-bg);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 1.15rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+      .app-menu-toggle:active { transform: scale(0.96); }
+
+      /* Панель приложения выезжает справа */
+      .app-drawer {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0; right: 0;
+        z-index: 901;
+        width: min(84vw, 300px);
+        height: 100%;
+        background-color: var(--panel-bg);
+        border-left: 1px solid var(--border-color);
+        box-shadow: -14px 0 44px rgba(0, 0, 0, 0.5);
+        transform: translateX(100%);
+        transition: transform 0.28s var(--ease);
+      }
+      .app-drawer.open { transform: translateX(0); }
+
+      .app-drawer-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+        padding: 0.9rem 1rem;
+        font-weight: 600;
+        color: var(--text-color);
+        border-bottom: 1px solid var(--border-color);
+      }
+      .app-drawer-close {
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0.25rem 0.45rem;
+        border-radius: 6px;
+      }
+      .app-drawer-close:hover { background-color: var(--input-bg); color: #fff; }
+
+      /* Кнопки открыть/сохранить — вертикально, во всю ширину */
+      .app-drawer .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+        padding: 1rem;
+      }
+      .app-drawer .controls .btn { width: 100%; text-align: center; }
+
+      /* Затемняющая подложка */
+      .app-drawer-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 900;
+        background-color: rgba(8, 9, 12, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.28s ease;
+      }
+      .app-drawer-overlay.open { opacity: 1; pointer-events: auto; }
+    }
+
     .hidden { display: none !important; }
 
     @media (prefers-reduced-motion: reduce) {
@@ -784,12 +870,21 @@
 
   <header>
     <h1><span class="logo">⚙️</span> HTML Yaml Editor</h1>
-    <div class="controls">
+    <button class="app-menu-toggle" id="app-menu-toggle" onclick="toggleAppDrawer()" aria-label="Меню">☰</button>
+    <div class="controls" id="app-controls">
       <input type="file" id="file-input" accept=".yaml,.yml">
-      <button class="btn" onclick="document.getElementById('file-input').click()">Открыть файл</button>
+      <button class="btn" onclick="document.getElementById('file-input').click(); closeAppDrawer();">Открыть файл</button>
       <button class="btn btn-primary" id="save-btn" disabled>Сохранить YAML</button>
     </div>
   </header>
+  <!-- Боковое меню приложения: на мобилках сюда переносятся кнопки открыть/сохранить -->
+  <div class="app-drawer-overlay" id="app-drawer-overlay" onclick="closeAppDrawer()"></div>
+  <div class="app-drawer" id="app-drawer">
+    <div class="app-drawer-head">
+      <span>Меню</span>
+      <button class="app-drawer-close" onclick="closeAppDrawer()" aria-label="Закрыть меню">✕</button>
+    </div>
+  </div>
 
   <main>
     <div class="banner" id="dup-banner"></div>
@@ -846,6 +941,7 @@
           <button class="tag-btn" onclick="insertTag('cite')">&lt;cite&gt;</button>
           <button class="tag-btn" onclick="insertTag('aside')">&lt;aside&gt;</button>
           <button class="tag-btn" onclick="insertTag('footer')">&lt;footer&gt;</button>
+          <button class="tag-btn" onclick="insertCustom('<hr/>', '')">&lt;hr/&gt;</button>
           <span class="tag-sep"></span>
           <!-- Форматирование -->
           <button class="tag-btn" onclick="insertTag('b')">&lt;b&gt;</button>
@@ -1165,6 +1261,36 @@
       else openTagDrawer();
     }
 
+    /* ---------- Мобильное меню приложения (открыть/сохранить) ---------- */
+    const appDrawer = document.getElementById('app-drawer');
+    const appDrawerOverlay = document.getElementById('app-drawer-overlay');
+    const appControls = document.getElementById('app-controls');
+    const appHeader = document.querySelector('header');
+    const appMenuMedia = window.matchMedia('(max-width: 720px)');
+    function openAppDrawer() {
+      appDrawer.classList.add('open');
+      appDrawerOverlay.classList.add('open');
+    }
+    function closeAppDrawer() {
+      appDrawer.classList.remove('open');
+      appDrawerOverlay.classList.remove('open');
+    }
+    function toggleAppDrawer() {
+      if (appDrawer.classList.contains('open')) closeAppDrawer();
+      else openAppDrawer();
+    }
+    // На мобилках кнопки переезжают в боковую панель, на десктопе — обратно в шапку.
+    function placeAppControls() {
+      if (appMenuMedia.matches) {
+        appDrawer.appendChild(appControls);
+      } else {
+        appHeader.appendChild(appControls);
+        closeAppDrawer();
+      }
+    }
+    appMenuMedia.addEventListener('change', placeAppControls);
+    placeAppControls();
+
     /* ---------- Telegram-предпросмотр ---------- */
     // Рендерим значение как документ: поддерживаемые теги стилизуются в превью,
     // переносы строк в тексте превращаются в <br>.
@@ -1338,6 +1464,7 @@
 
     /* ---------- Сохранение YAML ---------- */
     saveBtn.addEventListener('click', () => {
+      closeAppDrawer();
       if (parsedData === null) return;
       try {
         const yamlOutput = jsyaml.dump(parsedData, { lineWidth: -1, noRefs: true });
