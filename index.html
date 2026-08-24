@@ -673,6 +673,106 @@
 
     .empty-state { text-align: center; margin-top: 4rem; color: var(--text-muted); line-height: 1.9; animation: fadeUp 0.5s var(--ease) both; }
     .empty-state .big { font-size: 2.6rem; }
+    /* ---------- Мобильное меню тегов (боковая выдвижная панель) ---------- */
+    /* На десктопе .tag-drawer «прозрачен» (display:contents): тулбар и вкладки
+       раскладываются в .toolbar-container как раньше, а обёртка/кнопка/подложка скрыты. */
+    .tag-drawer { display: contents; }
+    .tag-drawer-head,
+    .tag-menu-toggle,
+    .tag-drawer-overlay { display: none; }
+
+    @media (max-width: 720px) {
+      /* Инлайновый тулбар прячется в панель, вместо него — кнопка-открывашка */
+      .tag-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background-color: var(--input-bg);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 0.45rem 0.85rem;
+        font-family: var(--font-ui);
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .tag-menu-toggle .tmt-plus { font-size: 1.1rem; line-height: 1; color: var(--accent-color); }
+      .tag-menu-toggle:active { transform: scale(0.97); }
+
+      /* Тулбар превращается в выдвижную панель справа */
+      .tag-drawer {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0; right: 0;
+        z-index: 1101;
+        width: min(84vw, 320px);
+        height: 100%;
+        background-color: var(--panel-bg);
+        border-left: 1px solid var(--border-color);
+        box-shadow: -14px 0 44px rgba(0, 0, 0, 0.5);
+        transform: translateX(100%);
+        transition: transform 0.28s var(--ease);
+      }
+      .tag-drawer.open { transform: translateX(0); }
+
+      .tag-drawer-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+        padding: 0.9rem 1rem;
+        font-weight: 600;
+        color: var(--text-color);
+        border-bottom: 1px solid var(--border-color);
+      }
+      .tag-drawer-close {
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0.25rem 0.45rem;
+        border-radius: 6px;
+      }
+      .tag-drawer-close:hover { background-color: var(--input-bg); color: #fff; }
+
+      /* Кнопки тегов — прокручиваемый список внутри панели */
+      .html-toolbar {
+        flex: 1;
+        overflow-y: auto;
+        align-content: flex-start;
+        padding: 0.9rem 1rem 1.3rem;
+        gap: 0.45rem;
+      }
+      .tag-btn { font-size: 0.85rem; padding: 0.45rem 0.7rem; }
+
+      /* Разделители групп — горизонтальные линии на всю ширину панели */
+      .tag-sep {
+        flex-basis: 100%;
+        width: auto;
+        height: 1px;
+        min-height: 0;
+        align-self: auto;
+        margin: 0.35rem 0;
+      }
+
+      /* Затемняющая подложка под панелью (закрывает по тапу) */
+      .tag-drawer-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 1100;
+        background-color: rgba(8, 9, 12, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.28s ease;
+      }
+      .tag-drawer-overlay.open { opacity: 1; pointer-events: auto; }
+    }
+
     .hidden { display: none !important; }
 
     @media (prefers-reduced-motion: reduce) {
@@ -720,7 +820,18 @@
       </div>
 
       <div class="toolbar-container">
-        <div class="html-toolbar" id="html-toolbar">
+        <!-- Мобильная кнопка открытия меню тегов (скрыта на десктопе) -->
+        <button class="tag-menu-toggle" id="tag-menu-toggle" onclick="toggleTagDrawer()" aria-label="Меню тегов">
+          <span class="tmt-plus">＋</span><span>Теги</span>
+        </button>
+        <div class="tag-drawer-overlay" id="tag-drawer-overlay" onclick="closeTagDrawer()"></div>
+
+        <div class="tag-drawer" id="tag-drawer">
+          <div class="tag-drawer-head">
+            <span>Вставить тег</span>
+            <button class="tag-drawer-close" onclick="closeTagDrawer()" aria-label="Закрыть меню">✕</button>
+          </div>
+          <div class="html-toolbar" id="html-toolbar">
           <!-- Заголовки -->
           <button class="tag-btn" onclick="insertTag('h1')">&lt;h1&gt;</button>
           <button class="tag-btn" onclick="insertTag('h2')">&lt;h2&gt;</button>
@@ -765,6 +876,7 @@
           <button class="tag-btn" onclick="insertTag('tg-time', 'unix=&quot;1647531900&quot;')">&lt;tg-time&gt;</button>
           <button class="tag-btn" onclick="insertTag('tg-spoiler')">&lt;tg-spoiler&gt;</button>
           <button class="tag-btn" onclick="insertTag('tg-emoji', 'emoji-id=&quot;5368324170671202286&quot;')">&lt;tg-emoji&gt;</button>
+          </div>
         </div>
 
         <div class="tab-switch">
@@ -1022,6 +1134,7 @@
         modalTextarea.selectionStart = start + openTag.length;
         modalTextarea.selectionEnd = modalTextarea.selectionStart + selectedText.length;
       }
+      closeTagDrawer();
     }
     function insertCustom(openStr, closeStr) {
       const start = modalTextarea.selectionStart;
@@ -1032,6 +1145,24 @@
       modalTextarea.focus();
       modalTextarea.selectionStart = start + openStr.length;
       modalTextarea.selectionEnd = modalTextarea.selectionStart + selectedText.length;
+      closeTagDrawer();
+    }
+
+    /* ---------- Мобильное меню тегов ---------- */
+    const tagDrawer = document.getElementById('tag-drawer');
+    const tagDrawerOverlay = document.getElementById('tag-drawer-overlay');
+    const tagMenuToggle = document.getElementById('tag-menu-toggle');
+    function openTagDrawer() {
+      tagDrawer.classList.add('open');
+      tagDrawerOverlay.classList.add('open');
+    }
+    function closeTagDrawer() {
+      tagDrawer.classList.remove('open');
+      tagDrawerOverlay.classList.remove('open');
+    }
+    function toggleTagDrawer() {
+      if (tagDrawer.classList.contains('open')) closeTagDrawer();
+      else openTagDrawer();
     }
 
     /* ---------- Telegram-предпросмотр ---------- */
@@ -1133,6 +1264,8 @@
         modalTextarea.classList.add('hidden');
         modalPreview.classList.remove('hidden');
         htmlToolbar.classList.add('hidden');
+        tagMenuToggle.classList.add('hidden');
+        closeTagDrawer();
         previewBtn.classList.add('active');
         editBtn.classList.remove('active');
         moveTabIndicator(previewBtn);
@@ -1140,6 +1273,7 @@
         modalTextarea.classList.remove('hidden');
         modalPreview.classList.add('hidden');
         htmlToolbar.classList.remove('hidden');
+        tagMenuToggle.classList.remove('hidden');
         editBtn.classList.add('active');
         previewBtn.classList.remove('active');
         moveTabIndicator(editBtn);
@@ -1160,6 +1294,7 @@
 
     function closeModal() {
       modal.classList.remove('active');
+      closeTagDrawer();
       activeTarget = null;
     }
 
