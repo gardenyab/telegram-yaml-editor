@@ -515,10 +515,10 @@
         
         if (parsedData) {
             document.getElementById('modal-textarea').placeholder = parsedData["enterText"];
-            document.getElementById('btn-mode-preview').placeholder = parsedData["preview"];
-            document.getElementById('btn-mode-edit').placeholder = parsedData["htmlCode"];
-            document.getElementById('cancel-button').placeholder = parsedData["cancelButton"];
-            document.getElementById('save-button').placeholder = parsedData["saveButton"];
+            document.getElementById('btn-mode-preview').textContent = parsedData["preview"];
+            document.getElementById('btn-mode-edit').textContent = parsedData["htmlCode"];
+            document.getElementById('cancel-button').textContent = parsedData["cancelButton"];
+            document.getElementById('save-button').textContent = parsedData["saveButton"];
             document.getElementById('tree-search').placeholder = parsedData["searchPlaceholder"];
             document.getElementById('presets-title').textContent = parsedData["presetsTitle"];
             document.getElementById('global-save').textContent = parsedData["saveAll"];
