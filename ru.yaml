@@ -1,0 +1,679 @@
+_name: "🇷🇺 (100%)"
+_description: "Просто русский язык"
+_author: "@GardenYabDev"
+
+# ========================================================== #
+
+quoteGenerateError: "<tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> Ошибка создания стикера."
+quoteWait: "<tg-emoji emoji-id='5776213190387961618'>🕓</tg-emoji> Подождите..."
+quoteEnterUNAndText: "<tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> Введите юзернейм и текст."
+addQuoteToPack: "➕ Добавить в стикер пак"
+viewStickerPack: "✅ Открыть стикер пак"
+quoteNeedReplyToMsg: "<tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> Ответьте на сообщение пользователя."
+spammerDetected: |
+    <tg-emoji emoji-id="5350626912546865231">‼️</tg-emoji> В чат зашел {userName}, но он находится в нашей антиспам базе по причине "<b>{reason}</b>"
+
+    <blockquote>Я ему выдал мут. Если вы хотите, чтобы я его больше не трогал, то <b>нажмите на кнопку ниже</b>.</blockquote>
+antispamError: "<tg-emoji emoji-id=\"5406835879694050722\">❎</tg-emoji> В чат зашел {userName}, но он числится в антиспам-списке. Я попытался его ограничить, но он сбил меня своей крутизной."
+yourselfReport: "<tg-emoji emoji-id=\"5368818100500178282\">😳</tg-emoji> Ну блин, не делай этого, пж... Я конечно все понимаю, но жаловаться на себя - <b>так себе затея</b>"
+antispamButton: "🛡 Антиспам-система"
+antispamInfo: |
+    <tg-emoji emoji-id="5778423822940114949">🛡</tg-emoji> <b>Антиспам-система</b>
+
+    <blockquote>•. Это защита от нежелательных пользователей (спамеров, скамеров и т. д.), которая помогает фильтровать подозрительные сообщения и ограничивать доступ к чату для нарушителей.</blockquote>
+    <blockquote>•. Чтобы пожаловаться на пользователя, ответье на его сообщение командой /report – мы рассмотрит жалобу и примем меры!</blockquote>
+    <blockquote>•. Если ваш аккаунт попал в антиспам-систему, бот будет игнорировать ВСЕ ваши команды и автоматически ограничит вас в группе при присоединении, если там включена защита. Вернуться в чат можно только после снятия блокировки, если владелец группы разрешит повторное добавление.</blockquote>
+reportSent: "<tg-emoji emoji-id=\"5420141555233071341\">😊</tg-emoji> <b>Жалоба отправлена!</b> Спасибо, что следите за порядком во всеми нашем любимом <b>Telegram</b>."
+youNotInAntispam: "<tg-emoji emoji-id=\"5332630862137685609\">💖</tg-emoji> Вас нету в нашей антиспам базе, вы можете жить спокойно."
+youInAntispam: |
+    <tg-emoji emoji-id="5373301389227226013">😷</tg-emoji><b> Oops!</b>
+
+    <blockquote>Оказывается, вы находитесь в нашей антиспам базе. Бот будет игнорить все ваши команды, кроме Старт и Мой спам. Вы можете подать заявку на удаление с базы в {supportChat}</blockquote>
+    <blockquote>Причина блокировки ~ <b>{reason}</b>.</blockquote>
+antispamWarning: "❗ Предупреждение от антиспам системы "
+settingsText: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки</b></h3>
+    <hr/>
+    <blockquote><p>Настройте бота так, как душе угодно!</p></blockquote>
+noAccess: "🔒"
+nextButton: "➡️"
+prevButton: "⬅️"
+backButton: "◀️ Назад"
+closeButton: "❌ Закрыть"
+cancelButton: "❌ Отмена"
+thisButtonNoForYou: "❌ Не для вас эта кнопочка росла"
+changeButton: "✏️ Изменить"
+setButton: "✏️ Установить"
+yesButton: "✅ Да"
+noButton: "❌ Нет"
+privateSettingsButton: "🔧 Мои настройки"
+privateLangButton: "🌎 Язык"
+nowPlayingSettingsText: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="6007938409857815902">🎧</tg-emoji> Настройте функцию "<b>Сейчас играет</b>".
+    <tg-emoji emoji-id="5886412370347036129">👤</tg-emoji> Статус аккаунта ~ <b>{status}</b></blockquote>
+nowPlayingSettingsEnterNewNickname: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="5886412370347036129">👤</tg-emoji> Введите ваш ник на Last.fm</blockquote>
+privateSettingsText1: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки</b></h3>
+    <hr/>
+    <blockquote><p><tg-emoji emoji-id="5776233299424843260">🌐</tg-emoji> <b>Язык</b> - Выберите язык, на котором бот будет отображать все сообщения. Вы так же можете выбирать темы, отключать цитаты, премиум эмодзи и расширенное форматирование.</p></blockquote>
+    <blockquote><p><tg-emoji emoji-id="5886436057091673541">📰</tg-emoji> <b>Новости</b> - Получать ли в личные сообщения новости от бота об обновлениях, ивентах и прочего.</p></blockquote>
+    <blockquote><p><tg-emoji emoji-id="5891093751555694829">🎭</tg-emoji> <b>РП-команды</b> - Разрешать ли пользователям использовать РП-команды в вашу сторону.</p></blockquote>
+    <blockquote><p><tg-emoji emoji-id="5909201569898827582">🔔</tg-emoji> <b>Уведомления</b> - Отправлять ли вам в личные сообщения рзные уведомления. Среди них есть: уведомления о передаче печенек, о разбане.</p></blockquote>
+    <blockquote><p><tg-emoji emoji-id="5931778537936657593">🎨</tg-emoji> <b>Компактный режим</b> - Позволяет уменьшить размер всплывающих сообщений.</p></blockquote>
+privateSettingsText2: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки</b></h3>
+    <hr/>
+    <blockquote><p><tg-emoji emoji-id="6007938409857815902">🎧</tg-emoji> <b>&quot;Сейчас играет&quot;</b> - Настройте функцию &quot;Сейчас играет&quot;. Выберите сервис и подключите свой аккаунт. Способ подключения может отличаться в зависимости от сервиса.</p></blockquote>
+    <blockquote><p><tg-emoji emoji-id="5931415565955503486">🤖</tg-emoji> <b>ИИ</b> - Тут вы можете выбрать провайдера, настроить апи ключ, очистить память и установить промпт.</p></blockquote>
+    <blockquote><p><tg-emoji emoji-id="5348214678524805365">🎮</tg-emoji> <b>Steam</b> - Установка ID вашего Steam аккаунта и API ключа.</p></blockquote>
+    <blockquote><p><tg-emoji emoji-id="5908864771448376860">🎤</tg-emoji> <b>Расшифровка голосовых сообщений</b> - Будет ли Бот реагировать на ваши голосовые сообщения. Настройки чата в приоритете.</p></blockquote>
+privateLangSettings: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки &gt; Язык</b></h3>
+    <hr/>
+    <blockquote><p>Настройте язык, на котором бот будет отображать все сообщения. Вы так же можете выбирать темы, отключать цитаты, премиум эмодзи и расширенное форматирование.</p></blockquote>
+privateThemeSettings: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки &gt; Язык &gt; Темы</b></h3>
+    <hr/>
+    <blockquote>🎨 Выберите тему, на которой бот будет отображать все команды <tg-spoiler>(исключение ~ <a href='https://t.me/GardenBotHelp/22'>системные сообщения</a>)</tg-spoiler>.<blockquote>
+customThemeButton: "🎨 Темы"
+setThemeButton: "🎨 Установить тему"
+infoAboutTheme: |
+    🎨 Тема <b>{name}</b> от <b>{user}</b>
+    ╰ <b>Последнее обновление</b> ~ <i>{lastUpdate}</i>
+    
+    <blockquote><b>Описание</b> ~ {description}</blockquote>
+yourLang: "🏳️ Свой"
+usersThemes: "🎨 Темы от пользователей"
+geminiModelSettings: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="5931415565955503486">🤖</tg-emoji> Выберите модель для вашего ИИ. Многие варианты из списка доступны только в платном тарифе. Для бесплатного использования лучшего всего подойдет <b>Gemini 3.1 Flash Lite</b>.</blockquote>
+geminiApiKeySettings: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="5956561916573782596">📄</tg-emoji> Тут вы можете изменить или удалить API ключ для вашего ИИ.</blockquote>
+newGeminiPrompt: |
+    <b><tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> Новый промпт установлено.</b>
+    <blockquote expandable><code>{newText}</code></blockquote>
+enterNewGeminiPrompt: |
+    <b><tg-emoji emoji-id='5877260593903177342'>⚙</tg-emoji> Настройки</b>
+
+    <blockquote><b>Введите новый промпт.</b></blockquote>
+newGeminiApiKey: |
+    <b><tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> Новый API ключ установлен.</b>
+enterNewGeminiApiKey: |
+    <b><tg-emoji emoji-id='5877260593903177342'>⚙</tg-emoji> Настройки</b>
+
+    <blockquote><b>Введите новый API ключ.</b></blockquote>
+chatSettingsButton: "💬 Настройки чата"
+chatSettingsText1: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки</b></h3>
+    <hr/>
+    <blockquote><tg-emoji emoji-id="5879585266426973039">🌐</tg-emoji> <b>Язык</b> - Выберите язык, на каком будут отображаться Системные сообщения.</blockquote>
+    <blockquote><tg-emoji emoji-id="5877396173135811032">⌨</tg-emoji> <b>Команды</b> - Отключите команды, которые не нужны.</blockquote>
+    <blockquote><tg-emoji emoji-id="5891169510483823323">💬</tg-emoji> <b>Новости</b> - Присылать ли в чат новости от бота об обновлениях, ивентах и прочего.</blockquote>
+    <blockquote><tg-emoji emoji-id="5908864771448376860">🗣</tg-emoji> <b>Расшифровка ГС</b> - Будет ли Бот реагировать на голосовые сообщения в чате.</blockquote>
+    <blockquote><tg-emoji emoji-id="5778423822940114949">🛡</tg-emoji> <b>Антиспам</b> - Использовать ли нашу Антиспам систему в этом чате.</blockquote>
+chatSettingsText2: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки</b></h3>
+    <hr/>
+    <blockquote><tg-emoji emoji-id="5906995262378741881">🙋</tg-emoji> <b>Приветствие</b> - Управление текстом и топиком для новых участников.</blockquote>
+    <blockquote><tg-emoji emoji-id="5877341274863832725">🚪</tg-emoji> <b>Прощание</b> - Управление текстом и топиком для уходящих участников.</blockquote>
+    <blockquote><tg-emoji emoji-id="5775887550262546277">❗️</tg-emoji> <b>Лимит варнов</b> - Количество варнов, при достижении которого пользователь будет автоматически забанен.</blockquote>
+    <blockquote><tg-emoji emoji-id="5931415565955503486">🤖</tg-emoji> <b>ДСнБ</b> - Автоматически выдавать наказание за ссылки на ботов в сообщении.</blockquote>
+    <blockquote><tg-emoji emoji-id="5469925779586443576">🛡</tg-emoji> <b>Капча</b> - Проверка пользователей при входе в чат.</blockquote>
+chatSettingsText3: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки</b></h3>
+    <hr/>
+    <blockquote><tg-emoji emoji-id="5372849966689566579">✈️</tg-emoji> <b>Системные сообщения</b> - Настройка сообщений, которые могут появляться без участия пользователя.</blockquote>
+chatCommandsSettings: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки > Команды</b></h3>
+    <hr/>
+    <blockquote><tg-emoji emoji-id="5877396173135811032">⌨</tg-emoji>  Выберите, какие команды будут работать, а какие нет.</blockquote>
+chatLangSettings: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки > Язык чата</b></h3>
+    <hr/>
+    <blockquote><tg-emoji emoji-id="5879585266426973039">🌐</tg-emoji> Выберите язык, на котором бот будет отображать системные сообщения.</blockquote>
+chatLangButton: "🌎 Язык чата"
+chatCommandsButton: "📝 Команды"
+welcomeTextButton: "💬 Приветствие"
+farewellTextButton: "👋 Прощание"
+changeWelcomeText: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки > Приветствие</b></h3>
+    <hr/>
+    <blockquote><tg-emoji emoji-id="5906995262378741881">🙋</tg-emoji> <b>Приветствие</b> - Управление текстом и топиком для новых участников.</blockquote>
+enterNewWelcomeText: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки > Приветствие</b></h3>
+    <hr/>
+    <blockquote><b>Введите новое значение.</b>
+    Можно использовать префиксы и форматирование, включая премиум эмодзи</blockquote>
+    <blockquote><b>Доступные префиксы</b>
+    <code>{userName}</code> ~ имя пользователя (без ссылки)
+    <code>{userLink}</code> ~ имя пользователя (с ссылкой)
+    <code>{chatTitle}</code> ~ название чата
+    <code>{time}</code> ~ текущее время</blockquote>
+changeFarewellText: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки > Прощание</b></h3>
+    <hr/>
+    <blockquote><tg-emoji emoji-id="5877341274863832725">🚪</tg-emoji> <b>Прощание</b> - Текст, которым бот прощается с участниками, которые вышли из чата.</blockquote>
+enterNewFarewellText: |
+    <h3><tg-emoji emoji-id="5409117246062625941">⚙️</tg-emoji> <b>Настройки > Прощание</b></h3>
+    <hr/>
+
+    <blockquote><b>Введите новое значение.</b>
+    <br>
+    Можно использовать префиксы и форматирование, включая премиум эмодзи</blockquote>
+    <blockquote><b>Доступные префиксы</b>
+    <code>{userName}</code> ~ имя пользователя (без ссылки)
+    <code>{userLink}</code> ~ имя пользователя (с ссылкой)
+    <code>{chatTitle}</code> ~ название чата
+    <code>{time}</code> ~ текущее время</blockquote>
+newWelcomeText: |
+    <b><tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> Новое приветствие установлено.</b>
+    <blockquote expandable><code>{newText}</code></blockquote>
+newFarewellText: |
+    <b><tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> Новое прощание установлено.</b>
+    
+    <blockquote expandable><code>{newText}</code></blockquote>
+changeWarnLimit: |
+    <b><tg-emoji emoji-id='5877260593903177342'>⚙</tg-emoji> Настройки</b>
+    
+    <blockquote><tg-emoji emoji-id="5775887550262546277">❗️</tg-emoji> <b>Лимит варнов</b> ~ Количество варнов, при достижении которого пользователь будет автоматически забанен. Максимальное количество - {max}, минимальное - {min}</blockquote>
+    <blockquote><b>Текущее значение</b> ~ <code>{warnLimit}</code></blockquote>
+enterNewWarnLimit: |
+    <b><tg-emoji emoji-id='5877260593903177342'>⚙</tg-emoji> Настройки</b>
+
+    <blockquote>Введите новое значение (целым числом)</blockquote>
+warnLimitButton: "⚠️ Лимит варнов"
+newWarnLimit: |
+    <b><tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> Новый лимит варнов установлен.</b>
+    
+    <blockquote><code>{newWarnLimit}</code></blockquote>
+rpSwitch: "🎭 РП-команды"
+notificationsSwitch: "🔔 Уведомления"
+compactModeSwitch: "🔽 Компактный режим"
+antispamSwitch: "🛡️ Антиспам"
+whoAreYouSwitch: "❓ Кто ты"
+whoAmISwitch: "❔ Кто я"
+reportSwitch: "📢 Жалобы"
+newsSwitch: "📰 Новости"
+adSwitch: "🔱 Реклама"
+quotesSwitch: "©️ Отключить цитаты"
+muteSwitch: "🔇 Мут"
+banSwitch: "🚫 Бан"
+kickSwitch: "👢 Кик"
+warnSwitch: "⚠️ Варн"
+speechToTextSwitch: "🎶 Расшифровка ГС"
+adminListSwitch: "📃 Список админов"
+muteListSwitch: "📃 Мутлист"
+banListSwitch: "📃 Банлист"
+captchaButton: "🛡️ Капча"
+cookiesFarmSwitch: "🍪 Фарм печенек"
+cookiesTopSwitch: "🍪 Топ по печенькам"
+boostSwitch: "🚀 Буст"
+diamondsTopSwitch: "💎 Топ по кристаллам"
+nameChangeSwitch: "🪪 Изменение ника"
+steamInfoSwitch: "🎮 Steam"
+nowPlayingSwitch: "🎧 \"Сейчас играет\""
+showOnInfoSwitch: "Показывать в инфо"
+muteText: |
+    <tg-emoji emoji-id="5890838600433536921">🔇</tg-emoji> <b>{name}</b> лишается права слова {time}
+    
+    <blockquote>╭ <b>Админ</b> ~ {admin}
+    ╰ <b>Причина</b> ~ {reason}</blockquote>
+unmuteText: "<tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> <b>{name}</b> вернули право слова."
+muteReplyNeedText: "<tg-emoji emoji-id=\"5350626912546865231\">‼️</tg-emoji> Ответьте на сообщение или введите юзернейм пользователя, которого хотите ограничить."
+unmuteReplyNeedText: "<tg-emoji emoji-id=\"5350626912546865231\">‼️</tg-emoji> Ответьте на сообщение или введите юзернейм пользователя, которому хотите вернуть право слова."
+unmuteNoNeedText: "<tg-emoji emoji-id=\"5235547387019142790\">🥳</tg-emoji> Он и так может писать, хехе."
+unmuteButton: "🗣️ Размут"
+banText: |
+    <tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> <b>{name}</b> был забанен {time}
+    
+    <blockquote>╭ <b>Админ</b> ~ {admin}
+    ╰ <b>Причина</b> ~ {reason}</blockquote>
+unbanText: "<tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> Пользователь <b>{name}</b> был разбанен. Теперь его можно добавить в чат."
+banReplyNeedText: "<tg-emoji emoji-id=\"5350626912546865231\">‼️</tg-emoji> Ответьте на сообщение или введите юзернейм пользователя, которого хотите забанить."
+unbanButton: "🚫 Разбан"
+unbanNoNeedText: "<tg-emoji emoji-id=\"5235547387019142790\">🥳</tg-emoji> Разбан не нужен, йоу."
+unbanReplyNeedText: "<tg-emoji emoji-id=\"5350626912546865231\">‼️</tg-emoji> Ответьте на сообщение или введите юзернейм пользователя, которому хотите снять бан."
+kickText: "<tg-emoji emoji-id=\"6023877759342746998\">👟</tg-emoji><b> {name}</b> был кикнут из группы"
+youreKickedYourself: "<tg-emoji emoji-id=\"5992248567908010889\">🩴</tg-emoji> Да, правильно, на выход."
+warnText: |
+    <tg-emoji emoji-id='5775887550262546277'>❗️</tg-emoji> <b>{name}</b> получает предупреждение {time} <tg-spoiler>({warns} / {warnLimit})</tg-spoiler>
+
+    <blockquote>╭ <b>Админ</b> ~ {admin}
+    ╰ <b>Причина</b> ~ {reason}</blockquote>
+unwarn1text: "<tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> С пользователя были сняты некоторые предупреждения <tg-spoiler>(1 из {warns})</tg-spoiler>."
+unwarnCountText: "<tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> {count} варна(-ов) было снято."
+unwarnNumText: "<tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> Варн №{num} был снят."
+unwarnNoWarns: "<tg-emoji emoji-id='5220053623211305785'>❓</tg-emoji> Варнов и так нету."
+warnLimitText: "<tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> <b>{name}</b> достиг лимита варнов <tg-spoiler>({warns} / {warnLimit})</tg-spoiler>, поэтому был <b>забанен</b> навсегда"
+reasonNotSpecified: "Не указана"
+ownerText: "🫅 Владелец"
+adminText: "👮 Администратор"
+memberText: "🙋 Участник"
+leftText: "⚰️ Не в чате"
+botText: "🤖 Бот"
+botNeedRights: "<tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> У меня недостаточно прав для выполнения этой команды."
+userIsAdmin: "<tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> Я не могу ограничить администратора."
+botCannotLimit: "<tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> Я не могу ограничить самого себя."
+cantLimitYourself: "<tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> Вы не можете ограничить самого себя."
+noRights: "<tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> <b>У вас отсувствуют следующие права</b> ~ {rights}"
+noRightsCallback: "🚫 У вас отсувствуют следующие права ~ {rights}"
+errorText: |
+    <blockquote><b>{emoji} Произошла ошибка :(</b></blockquote>
+    <blockquote>Сообщите о ней в <b>{supportChatUsername}</b>. ID ошибки - <code>{errorId}</code></blockquote>
+connectionErrorText: "<tg-emoji emoji-id=\"5276307163529092252\">🤬</tg-emoji> Почему-то пинг слишком высокий, попробуйте снова."
+can_restrict_members: "Блокировка пользователей"
+can_delete_messages: "Удаление сообщений"
+can_manage_video_chats: "Управление трансляциями"
+can_promote_members: "Назвачение администраторов"
+can_change_info: "Изменение профиля группы"
+can_invite_users: "Добавление участников"
+can_pin_messages: "Закрепление сообщений"
+can_manage_topics: "Управление темами"
+is_anonymous: "Анонимность"
+can_manage_chat: "Управление чатом"
+noApiKey: "<tg-emoji emoji-id=\"5220226053263342894\">❗</tg-emoji><b> Вы не установили свой API ключ в настройках бота. </b>\n<blockquote>•. Получить его можно на сайте aistudio.google.com/api-keys</blockquote>"
+geminiPage: "🤖 ИИ"
+apiKeySettings: "🔑 API ключ"
+promptSettings: "📄 Промпт"
+contextReset: "🧹 Очистить память"
+modelSettings: "🤖 Модель"
+geminiPageText: |
+    <h3><tg-emoji emoji-id="5409117246062625941"></tg-emoji> <b>Настройки &gt; ИИ</b></h3>
+    <hr/>
+    <blockquote><p>Тут вы можете подробно настроить своего ИИ</p></blockquote>
+    <blockquote><p><tg-emoji emoji-id="5321486422731942644"></tg-emoji> <b>API ключ</b> - {apiKeyStatus}</p><p><tg-emoji emoji-id="5886412370347036129"></tg-emoji> <b>Длина памяти</b> - {contextLenght}</p><p><tg-emoji emoji-id="5956561916573782596"></tg-emoji> <b>Промпт</b> - {customPrompt}</p><p><tg-emoji emoji-id="5931415565955503486"></tg-emoji> <b>Модель</b> - {customModel}</p></blockquote>
+apiKeyStatusNotSet: "Не установлен"
+apiKeyStatusSet: "Установлен"
+customPromtStatus: "Нету"
+promptReseted: "✅ Промпт удален"
+contextReseted: "✅ Память очищена"
+geminiApiKeyReseted: "✅ API ключ удален"
+setGeminiPrompt1: "📄 Установить промпт"
+setGeminiApiKey1: "🔑 Установить ключ"
+setGeminiApiKey2: "🔑 Изменить ключ"
+resetGeminiApiKey: "🧹 Удалить ключ"
+setGeminiPrompt2: "📄 Изменить промпт"
+resetGeminiPrompt: "🧹 Удалить промпт"
+showGeminiApiKey: "🔑 Показать API ключ"
+geminiPromptSettings: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="5956561916573782596">📄</tg-emoji> Тут вы можете изменить или удалить промпт у ИИ. Промпт - системные инструкции, по которым он будет отвечать. После установки/изменения промпта рекомендуется <b>Очистить память</b>.</blockquote>
+geminiPromptBlock: |
+    <blockquote expandable><b>Текущий промпт:</b> 
+    <code>{geminiPrompt}</code></blockquote>
+addToGroup: "➕ Добавить в группу"
+startText: |
+    <tg-emoji emoji-id="5906995262378741881">🙋</tg-emoji> <b>Приветствую, {name}!</b>
+
+    <blockquote><tg-emoji emoji-id="5778423822940114949">🛡</tg-emoji> У нас есть собственная антиспам-система. Чтобы проверить, находитесь ли вы в ней, напишите - <code>Мой спам</code>.
+    </blockquote><blockquote><tg-emoji emoji-id="5879585266426973039">🌐</tg-emoji> Так же, вы можете сменить язык в настройках.</blockquote>
+    <blockquote>╭ <a href="http://t.me/GardenBotHelp">Список всех команд с их описанием</a>
+    ├ <a href="http://t.me/GardenYabDevChat">Чат бота</a>
+    ╰ <a href="http://t.me/GardenYabDev">Канал с новостями</a></blockquote>
+recornizeSpeech: "<tg-emoji emoji-id='5908864771448376860'>🗣</tg-emoji> Секунду..."
+recornizeError: "<tg-emoji emoji-id='5908864771448376860'>🗣</tg-emoji> Видимо, тут ничего нету (это могла быть ошибка, попробуйте отправить ещё раз)."
+commandDisabled: "⚠️ Эта функция отключена в этом чате."
+whoAreYouText: |
+    {start} ~ <b>Это {name}</b>
+
+    <blockquote>╭ <b>Репутация</b> ~ {reputation}
+    ├ <b>Варны</b> ~ {warns} / {warnLimit}
+    ╰ <b>Первое появление</b> ~ {joinDate}</blockquote>
+     
+    <tg-emoji emoji-id="5877485980901971030">📊</tg-emoji> <b>Актив</b> ~ {d} : {w} : {m} : {all} <tg-spoiler>(день, неделя, месяц, весь)</tg-spoiler>
+whoAmIText: | 
+    {start} ~ <b>Вы {name}</b>
+
+    <blockquote>╭ <b>Репутация</b> ~ {reputation}
+    ├ <b>Варны</b> ~ {warns} / {warnLimit}
+    ╰ <b>Первое появление</b> ~ {joinDate}</blockquote>
+     
+    <tg-emoji emoji-id="5877485980901971030">📊</tg-emoji> <b>Актив</b> ~ {d} : {w} : {m} : {all} <tg-spoiler>(день, неделя, месяц, весь)</tg-spoiler>
+listIsEmpty: "<blockquote><tg-emoji emoji-id=\"5208590209469401149\">‼️</tg-emoji> Список пуст.</blockquote>"
+muteListText: |
+    <b><tg-emoji emoji-id="5897853622057700958">🎙</tg-emoji> Список пользователей, которые в муте</b>
+
+    {users}
+restrictedUser: |
+    <blockquote><b>{name}</b>
+    ╰ {reason} ({time})</blockquote>
+banListText: |
+    <b><tg-emoji emoji-id="5872829476143894491">🚫</tg-emoji> Список пользователей, которые забанены</b>
+
+    {users}
+foreverText: "навсегда"
+yourTehemAddedToList: "<tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> Ваша тема была добавлена в список тем."
+themeHasntKey: "❌ В теме нет ключа {key}."
+themeIsSet: "✅ Тема установлена."
+addToThemeList: "➕ Добавить в список тем"
+enterNum: "❌ Введите число больше {num}."
+for: "на {time}"
+listOwnerText: "Владелец"
+listAdminText: "Администраторы"
+adminListText: | 
+    <tg-emoji emoji-id="5332764774923009578">👑</tg-emoji>  <b>Владелец</b>
+    <blockquote>•. {owner}</blockquote>
+
+    <tg-emoji emoji-id="5258212320282168974">🎈</tg-emoji> <b>Админы</b>
+    <blockquote>{admins}</blockquote>
+adminConfig: "<blockquote>{name}</blockquote>"
+helpText: |
+    <blockquote><tg-emoji emoji-id="5873121512445187130">❓</tg-emoji> <b>Нужна помощь?</b></blockquote>
+    <blockquote>• <a href="https://t.me/GardenBotHelp">Описание команд</a>
+    • <a href="https://t.me/GardenYabDevChat">Задать вопрос</a></blockquote>
+infoText: | 
+    <blockquote><tg-emoji emoji-id="5879785854284599288">ℹ️</tg-emoji> <b>Инфо о боте</b></blockquote>
+    <blockquote>~ Простой и надежный администратор с игровыми функциями и полностью настраиваемым текстом</blockquote>
+    <blockquote>• <a href="https://t.me/GardenYabDev">Канал с новостями</a>
+    • <b>Версия</b> ~ {version}</blockquote>
+farmText: |
+    <tg-emoji emoji-id="5197302992465844937">🍪</tg-emoji> ~ <b>{name}, вы заработали {cookie} печенек {diamondsText}</b><tg-spoiler>({boost}×)</tg-spoiler>
+
+    <blockquote><tg-emoji emoji-id="5776213190387961618">🕓</tg-emoji> Следующий фарм будет доступен через {minutes} минут</blockquote>
+farmErrorText: "<tg-emoji emoji-id='5776213190387961618'>🕓</tg-emoji> Эй, не спеши, надо подождать ещё <b>{minutes} минут {seconds} секунд</b>, перед тем как фармить печеньки."
+diamondsText: "и {diamonds} кристаллов "
+cookiesTopText: |
+    <tg-emoji emoji-id="5877219383691972108">➕</tg-emoji> <b>Топ по печеньках в этом чате!</b>
+    
+    {users}
+diamondsTopText: |
+    <tg-emoji emoji-id="5807465992363710697">💎</tg-emoji> <b>Топ по кристаллам в этом чате!</b>
+
+    {users}
+newNickname: "<tg-emoji emoji-id=\"5936017305585586269\">🪪</tg-emoji> Вы точно хотите изменить ник на <b>{name}</b>?"
+newNicknameYes: "<tg-emoji emoji-id=\"5936017305585586269\">🪪</tg-emoji> Ваш ник был изменён на <b>{name}</b>"
+resetNickname: "<tg-emoji emoji-id=\"5936017305585586269\">🪪</tg-emoji> Вы точно хотите сбросить свой ник?"
+resetNicknameYes: "<tg-emoji emoji-id=\"5936017305585586269\">🪪</tg-emoji> Ваш ник был сброшен"
+noNickname: "<tg-emoji emoji-id=\"5936017305585586269\">🪪</tg-emoji> Ник и так не установлен"
+bagText: |
+    <tg-emoji emoji-id="5778311685638984859">🪙</tg-emoji> В вашем мешке
+
+    <blockquote>╭ <b>Печенек</b> ~ {cookies}
+    ╰ <b>Кристалл(-ов/-а)</b> ~ {diamonds}</blockquote>
+    
+    * <b>Уровень буста</b> ~ {boost}×
+boostText: |
+    <tg-emoji emoji-id="5877613700344450910">⏲</tg-emoji> <b>Ваш уровень буста</b> ~ {boost}×
+    <blockquote><tg-emoji emoji-id="5775937998948404844">➕</tg-emoji> Вы хотите повысить его? 
+    ╰ <b>Цена повышения</b> ~ {cost} кристаллов</blockquote>
+upgradeBoostButton: "⬆️ Улучшить"
+upgradeBoostText: "<tg-emoji emoji-id=\"5201730588351945766\">🎊</tg-emoji> Yay, ваш уровень буста повышен до <b>{boost}×</b>."
+noDiamonds: "<tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> Не хватает еще <b>{diamonds}</b> кристаллов"
+replyToMessage: "<tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> Ответьте на сообщение пользователя, или введите его юзернейм, а то я не Ванга."
+captchaText: "{userName}, выбери эмодзи который на картинке, чтобы получить возможность что-то писать."
+settingsError: "<tg-emoji emoji-id=\"5350477112677515642\">⚠️</tg-emoji> Данный параметр пока недоступен."
+promocodeActivated: "<tg-emoji emoji-id=\"5201730588351945766\">🎊</tg-emoji> Вы успешно активировали промокод!"
+promocodeError: "<tg-emoji emoji-id=\"5321012601939838274\">❌</tg-emoji> Такого промокода нету или вы его уже использовали."
+thereIsNot: "Нету"
+welcomeTextIsReset: "<tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> Приветствие новых участников отключено."
+farewellTextIsReset: "<tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> Сообщение об уходе участников отключено."
+disableButton: "❌ Отключить"
+captchaCorrect: "<tg-emoji emoji-id=\"5201730588351945766\">🎊</tg-emoji> Умничка, теперь ты можешь свободно общаться!"
+captchaIncorrect: "<tg-emoji emoji-id=\"5350477112677515642\">⚠️</tg-emoji> Простите, но вы выбрали не то эмодзи. Вы можете попросить владельца чата или админов о размуте."
+IncorrectNameLength: "<tg-emoji emoji-id=\"5350477112677515642\">⚠️</tg-emoji> Длина имени должна быть от {min} до {max} символов"
+botLinkDetectorSettings: |
+    <tg-emoji emoji-id='5877260593903177342'>⚙</tg-emoji> <b>Настройки</b> 
+
+    <blockquote>🤖 Выбери автоматическое действие при обнаружении ссылок на ботов.</blockquote>
+botLinkDetectorPage: "🤖 ДСнБ"
+commandIsCurrentlyUnavailable: "<tg-emoji emoji-id='5879895758202735862'>🔒</tg-emoji> Эта команда на данный момент отключена, следите за новостями в нашем канале ~ <b>{newsChannelUsername}</b>"
+eulaButton: "📑 EULA"
+inlineErrorTitle: "Произошла ошибка :("
+inlineErrorDesc: "Нажмите для получения ID ошибки"
+inlineErrorText: |
+    <tg-emoji emoji-id='5253959125838090076'>👁</tg-emoji> ID вашей ошибки ~ <b>{errorId}</b>. 
+    <blockquote>Пожалуйста, сообщите о ней в <b>{supportChatUsername}</b></blockquote>"
+inlineNowPlayingText: |
+    <img src="{photoLink}"/>
+    <h3><tg-emoji emoji-id="5222472119295684375"></tg-emoji> Вы сейчас слушаете</h3>
+    <hr/>
+    <aside>{title}<cite> {artist}</cite></aside>
+nowPlayingPage: "🎧 \"Сейчас играет\""
+nowPlayingAccountNotConnected: |
+    <tg-emoji emoji-id="5879813604068298387">❗️</tg-emoji> <b>Вы не подключили свой аккаунт!</b>
+
+    <blockquote>Как подключить его? Перейдите в Настройки &gt; 🔧 Мои настройки &gt; 🎧 "Сейчас играет" &gt; Привязать аккаунт &gt; Введите ваш юзернейм из Last.fm. </blockquote>
+    <blockquote expandable><b>Как подключить музыкальные сервисы?
+    На Android/iOS:</b>
+    1. Включите любую песню в вашем сервисе
+    2. Зайдите в приложение <b>Last.fm</b>
+    3. Нажмите на вашу аватарку в главно меню
+    4. Переключите тумблер около вашего музыкального сервиса, чтобы он был зеленым
+    5. Вуаля, все готово!
+    <b>На Windows/Linux/MacOS:</b>
+    1. Установите дополнение для <b>Chrome/Firefox</b> под названием <b>Web Scrobbler</b>
+    2. Зайдите в настройки дополнения
+    3. Зайдите во вкладку <b>Accounts</b> и войдите со своего <b>Last.fm</b> аккаунта
+    4. Вуаля, все готово!</blockquote>
+nothingPlayingNow: "<tg-emoji emoji-id=\"5458779239941681169\">😔</tg-emoji> Сейчас ничего не играет"
+nowPlayingAccountNotConnectedInlineTitle: "MUSIC > Вы не привязали Last.fm аккаунт!"
+clickForDetails: "Нажмите для подробностей"
+nowPlayingGeneratingBanner: "Генерирую баннер..."
+nowPlayingWhoAmI: "<blockquote><tg-emoji emoji-id=\"5465188915990255885\">🌟</tg-emoji> Сейчас слушаю <b>{title}</b> - <b>{artist}</b></blockquote>"
+nowPlayingWhoAreYou: "<blockquote><tg-emoji emoji-id=\"5465188915990255885\">🌟</tg-emoji> Сейчас слушает <b>{title}</b> - <b>{artist}</b></blockquote>"
+NPAccountNotLinked: "Не привязан ❌"
+NPAccountLinked: "Привязан ✅ (<tg-spoiler>{accountName}</tg-spoiler>)"
+NPUnlinkText: "❌ Отвязать аккаунт"
+NPLinkText: "✅ Привязать аккаунт"
+NPTestButton: "🎵 Попробовать"
+userNotFoundInChat: | 
+    <blockquote><tg-emoji emoji-id="5226672086210090477">🔧</tg-emoji> Пользователь не найден в этом чате, возможно, его тут никогда не было, или ещё не прошло достаточно времени для обновления данных. 
+    <b>Убедитесь, что пользователь в чате и попробуйте позже</b></blockquote>
+linkToBotFound: "Обнаружена ссылка на стороннего бота"
+botsLinkDetectorSettings: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+    •. Тут вы можете подробно настроить наказание и длительность за ссылки на ботов в вашем чате
+
+    <blockquote><tg-emoji emoji-id="5931415565955503486">🤖</tg-emoji> <b>Статус</b> ~ {botLinksDetectorStatus}
+    <tg-emoji emoji-id="5870734657384877785">✋</tg-emoji> <b>Наказание</b> ~ {botLinksDetectorAction}
+    <tg-emoji emoji-id="5778605968208170641">🕒</tg-emoji> <b>Длительность</b> ~ {botLinksDetectorTime}</blockquote>
+turnOn: "✅ Включить"
+turnOff: "❌ Выключить"
+turnOnStatus: "✅ Включено"
+turnOffStatus: "❌ Выключено"
+botsLinkDetectorSettings2: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="5870734657384877785">✋</tg-emoji> Выберите наказание за ссылку и длительность</blockquote>
+ban: "Бан"
+mute: "Мут"
+warn: "Варн"
+deleteMsg: "Удалить сообщение"
+bldTimeSettings: "🕒 Изменить длительность"
+bldActionSettings: "✋ Изменить наказание"
+bldChangeTime: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="5778605968208170641">🕒</tg-emoji> Введите новую длительность наказания</blockquote>
+bldChangeTimeSuccess: |
+    <b><tg-emoji emoji-id='5825794181183836432'>✔️</tg-emoji> Новая длительность наказания установлена.</b>
+    <blockquote expandable><code>{newTime}</code></blockquote>
+bldChangeTimeError: |
+    <blockquote><b><tg-emoji emoji-id='5872829476143894491'>🚫</tg-emoji> Вы неправильно указали новую длительность. Попробуйте снова.</b></blockquote>
+warnListText: |
+    <tg-emoji emoji-id="5220197908342648622">❗</tg-emoji> <b>Ваши варны</b>
+
+    {warns}
+warnListItem: |
+    <blockquote>От <b>{name}</b>
+    ╰ {reason} ({time})</blockquote>
+chatActivityText: |
+    <tg-emoji emoji-id="5884336303415236350">📊</tg-emoji> <b>Статистика активности в чате</b> (за все время):
+
+    {active}
+steamAccountInfo: |
+    <img src="{photoLink}"/>
+    <h3><tg-emoji emoji-id="5215516368220233543"></tg-emoji> <b>Мой Steam аккаунт</b></h3>
+    <hr/>
+    <blockquote><p><b>{personaName}, {level}</b> уровень, <b>{playerStatus}</b></p></blockquote>
+    <hr/>
+    <h3><tg-emoji emoji-id="5350708744558753862"></tg-emoji> <b>Недавно играл в</b></h3>
+    <p>{recentGames}</p>
+waitPlease: "Подождите..."
+collectingData: "<tg-emoji emoji-id=\"5776213190387961618\">🕓</tg-emoji> Получаем данные..."
+goToBotSettings: "⚙️ Перейти в настройки бота"
+medalBrokenHeart: "Почему?"
+medalBanHamer: "Молот правосудия"
+medalBotOwner: "Владелец бота (пока сам себя не похвалишь - никто не похвалит)"
+medalPoorCheaf: "Сгорел сарай — гори и хата"
+pressToGetSteamInfo: "STEAM ⟩ Steam аккаунт"
+pressToGetSteamInfoDesc: "(если он подключен и является публичным)"
+pressToGetNPData: "MUSIC ⟩ Карточка текущего трека"
+pressToGetNPDataDesc: "(если он включен и подключен аккаунт)"
+pressToGetCurrentSteamGame: "STEAM ⟩ Карточка текущей игры"
+pressToGetCurrentSteamGameDesc: "(если она запущена и подключен аккаунт)"
+steamAccountNotConnectedInlineTitle: "Вы не привязали Steam аккаунт!"
+steamAccountConnectInstruction: |
+    <tg-emoji emoji-id="5879813604068298387">❗️</tg-emoji> <b>Вы не ввели ваш Account ID для SteamAPI</b>
+    
+    <blockquote>Как ввести его? Перейдите в Настройки &gt; 🔧 Мои настройки &gt; 🎮 Steam &gt; Привязать аккаунт &gt; Введите ваш ID аккаунта Steam.</blockquote>
+    <blockquote expandable><b>Как его узнать?</b>
+    1. Откройте Steam на ПК.
+    2. Щелкните сверху справа на ваш ник и баланс.
+    3. Нажмите на "Об аккаунте: *ваш логин*".
+    4. Откроются настройки вашего и аккаунта и сверху под надписью "аккаунт пользователя" будет ваш Steam ID.
+    </blockquote>
+steamApiKeyLimitInlineTitle: "Вы использовали все бесплатные запросы к Steam в день. ({steamRequests} / {totalFreeSteamRequests})"
+pressToSendLastSteamCachedData: "Нажмите, чтобы отправить последние сохраненные данные"
+cachedDataDesc: "<blockquote><tg-emoji emoji-id=\"5116275208906343429\">‼️</tg-emoji> Вы использовали все бесплатные запросы <tg-spoiler>({steamRequests} / {totalFreeSteamRequests})</tg-spoiler> в день, поэтому были отправлены последние сохраненные данные. Установите свой API ключ в настройках, чтобы убрать лимит</blockquote>"
+steamStatus0: "Офлайн"
+steamStatus1: "Онлайн"
+steamStatus2: "Занят"
+steamStatus3: "Отошел"
+steamStatus4: "Спит"
+steamStatus5: "Ищет трейда"
+steamStatus6: "Хочет сыграть"
+steamPageTitle: "🎮 Steam"
+connectSteamAccount: "✅ Привязать ID аккаунта"
+disconnectSteamAccount: "❌ Отвязать аккаунт"
+setSteamApiKey: "✅ Установить API ключ"
+removeSteamApiKey: "❌ Убрать API ключ"
+limitedSteamApiKey: "(с лимитами, {freeRequests} в день)"
+enterNewSteamAccountId: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="5886412370347036129">👤</tg-emoji> Введите ваш ID Steam аккаунта</blockquote>
+enterNewSteamApiKey: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="6005570495603282482">🔑</tg-emoji> Введите ваш API ключ Steam</blockquote>
+newSteamAccountId: "<b><tg-emoji emoji-id=\"5825794181183836432\">✔️</tg-emoji></b> <b>ID Steam аккаунта</b> установлено."
+newSteamApiKey: "<b><tg-emoji emoji-id=\"5825794181183836432\">✔️</tg-emoji></b> <b>API ключ Steam</b> установлено."
+steamSettingsText: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+    •. Тут вы можете настроить ID Steam аккаунта и API ключ
+    
+    <blockquote><tg-emoji emoji-id="5321486422731942644">🔑</tg-emoji> <b>API ключ</b> ~ {apiKey}
+    <tg-emoji emoji-id="5886412370347036129">👤</tg-emoji> <b>Статус аккаунта</b> ~ {accountStatus}</blockquote>
+steamAccountNotLinked: "Не привязан ❌"
+steamAccountLinked: "Привязан ✅ (<tg-spoiler>{accountId}</tg-spoiler>)"
+nowPlaysInfo: "<blockquote><tg-emoji emoji-id=\"5253640168681804236\">🌟</tg-emoji> Сейчас играет в <b>{game}</b></blockquote>"
+nowPlaysInfo2: "<blockquote><tg-emoji emoji-id=\"5253640168681804236\">🌟</tg-emoji> Сейчас играю в <b>{game}</b></blockquote>"
+steamCurrentGameInfo: | 
+    <tg-emoji emoji-id="5348214678524805365">🎮</tg-emoji> Вы играете в <b>{gameTitle}</b>
+    <blockquote>•. {description}</blockquote>
+steamCurrentGameNone: "<tg-emoji emoji-id=\"5458779239941681169\">😔</tg-emoji> Вы сейчас ни во что не играете."
+htmlTagsSwitch: "🎨 Форматирование"
+promocodeActivationsError: "<tg-emoji emoji-id=\"5458779239941681169\">😔</tg-emoji> Активации уже закончились..."
+captchaCorrectError: "<tg-emoji emoji-id=\"5438239044179863743\">😳</tg-emoji> Ээээ, вы прошли капчу, но бот не может вас размутить ._."
+automaticUnmuteError: | 
+    <tg-emoji emoji-id="5289772607556568230">😶</tg-emoji> Время мута у {userName} подошло к концу, но.... <b>У меня не получилось его размутить его из-за отсутствия определенных прав</b> <tg-spoiler>(Блокировка пользователей).</tg-spoiler> 
+
+    <blockquote>Скорее всего, он получил размут автоматически, но кто знает, лучше проверить.</blockquote>
+automaticUnbanError: | 
+    <tg-emoji emoji-id="5289772607556568230">😶</tg-emoji> Время бана у {userName} подошло к концу, но.... <b>У меня не получилось его разбанить из-за отсутствия определенных прав</b> <tg-spoiler>(Блокировка пользователей).</tg-spoiler> 
+
+    <blockquote>Скорее всего, он получил разбан автоматически, но кто знает, лучше проверить.</blockquote>
+automaticUnmuteAdminError: "<tg-emoji emoji-id=\"5289772607556568230\">😶</tg-emoji> Время мута у {userName} подошло к концу, но.... <b>Он админ</b>"
+automaticUnbanAdminError: "<tg-emoji emoji-id=\"5289772607556568230\">😶</tg-emoji> Время бана у {userName} подошло к концу, но.... <b>Он админ</b>"
+automaticUnmuteText: "<tg-emoji emoji-id=\"5220081566268536865\">😮</tg-emoji> Время мута у {userName} подошло к концу, в следующий раз, <b>попытайся не нарушать правила</b>."
+automaticUnbanText: "<tg-emoji emoji-id=\"5220081566268536865\">😮</tg-emoji> Время бана у {userName} подошло к концу, в следующий раз, <b>попытайся не нарушать правила</b>."
+enterNewTopicId: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="5197593250650680436">🪪</tg-emoji> Введите ID топика</blockquote>
+    <tg-spoiler>(Пример: https://t.me/username/1234 (1234 это ID) или используйте команду /thread в нужном топике, чтобы узнать)</tg-spoiler>
+newTopicIdInvalid: "<tg-emoji emoji-id=\"5447621198374511640\">🤐</tg-emoji> Вы ввели <b>неправильный ID топика</b>, проверьте правильность написания и попробуйте еще раз."
+sendToTopic: "🆔 Кидать в топик"
+changeTopicId: "🆔 Изменить ID топика"
+currentTextValue: | 
+    <b>Текущий текст</b>
+    <blockquote><code>{currentValue}</code></blockquote>
+topicIdValue: "<blockquote><tg-emoji emoji-id=\"5197593250650680436\">🪪</tg-emoji> ID топика ~ {topicId}</blockquote>"
+tryAgain: "🔄 Попробовать еще раз"
+newTopicIdValid: "<b><tg-emoji emoji-id=\"5825794181183836432\">✔️</tg-emoji></b><b> ID топика установлен, теперь сообщения будут идти в {topicId}.</b>"
+upgradeBoostAllButton: "⬆️ Улучшить на все"
+removeTopicId: "Кидать в основной чат"
+captchaSettingsText: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="5469925779586443576">🛡</tg-emoji> <b>Капча</b> ~ Проверка пользователей при входе в чат.</blockquote>
+addToIgnoreList: "✅ Добавить в игнор лист"
+antispamIgnoreList: |
+    <tg-emoji emoji-id="5235482949624800222">🥺</tg-emoji><b> Список пользователей, которые добавлены в игнор лист для антиспама</b>
+
+    {users}
+addToIgnoreListSuccess: |
+    <tg-emoji emoji-id="5235615616869610663">🙏</tg-emoji> Яп, теперь я не буду пытаться ограничить {userName}. 
+
+    <blockquote>Если вы <b>передумали</b>, загляните в /ignoreList</blockquote>
+addToIgnoreListUnmuteError: |
+    <tg-emoji emoji-id="5235615616869610663">🙏</tg-emoji> Яп, теперь я не буду пытаться ограничить {userName}. 
+
+    <blockquote>Если вы <b>передумали</b>, загляните в /ignoreList</blockquote>
+    <blockquote>У меня не получилось его размутить</blockquote>
+systemMessagesButton: "⏩ Системные сооб"
+systemMessagesSettingsText: |
+    <b><tg-emoji emoji-id="5877260593903177342">⚙</tg-emoji></b><b> Настройки</b>
+
+    <blockquote><tg-emoji emoji-id="5372849966689566579">✈️</tg-emoji> <b>Системные сообщения</b> ~ Сообщения, могут появляться без участия пользователя.</blockquote>
+antispamReasonOther: "Другое"
+ingredientsError: "<tg-emoji emoji-id=\"5289772607556568230\">😶</tg-emoji> У вас недостаточно <b>ингредиентов</b>, купите их в магазине."
+bakeText: |
+    <tg-emoji emoji-id="5255971360965930740">🕔</tg-emoji> Вы поставили печеньки в печь, <b>возвращайтесь через {time} минут.</b> 
+
+    <blockquote>Не приходите слишком поздно.</blockquote>
+bakeError: "<tg-emoji emoji-id=\"5255971360965930740\">🕔</tg-emoji> Не спеши, печеньки ещё не готовы. <b>Осталось {time} минут</b>"
+bakeSuccess: "<tg-emoji emoji-id=\"5201817428295696125\">🍪</tg-emoji> Вы успешно приготовили <b>{cookies} печенек</b>, яп!"
+bakeBurned: "<tg-emoji emoji-id=\"5458779239941681169\">😔</tg-emoji> Вы пришли слишком поздно, <b>{cookies} печенек сгорело</b>..."
+eventEnded: "<tg-emoji emoji-id=\"5436062865855359364\">☹️</tg-emoji> Ивент уже <b>закончен</b>, к сожалению..."
+shopTitle: "<tg-emoji emoji-id=\"5258024802010026053\">🛒</tg-emoji> <b>Магазин</b>"
+shopBuyQuestion: "<tg-emoji emoji-id=\"5220053623211305785\">❓</tg-emoji> Вы точно хотите купить <b>{item}</b> за <b>{price}</b> ?"
+shopAlreadyBuyed: "<tg-emoji emoji-id=\"5420140979707459246\">😳</tg-emoji> Вы уже покупали <b>{item}</b>"
+shopBuySuccess: "<tg-emoji emoji-id=\"5235478122081560535\">👍</tg-emoji> Вы успешно купили <b>{item}</b> за <b>{price}</b>"
+shopBuyError1: "<tg-emoji emoji-id=\"5235471280198658407\">👎</tg-emoji> У вас не хватает <b>{count} {type}</b>"
+shopBuyError2: "<tg-emoji emoji-id=\"5235471280198658407\">👎</tg-emoji> Данного предмета уже <b>не существует</b>"
+diamonds: "кристаллов"
+cookies: "печенек"
+medalCookies: "Властелин печенек"
+tryNewFarmSystem: "<blockquote>Попробуйте новую систему фарма, написав <code>печь</code></blockquote>"
+bagSwitch: "💰 Мешок"
+shopSwitch: "🛒 Магазин"
+
+quoteCreateError: "<tg-emoji emoji-id=\"5458779239941681169\">😔</tg-emoji> Ошибка создания фейковой цитаты. <b>Проверьте правильность написания юзернеймов</b>."
+changelogLink: "<tg-emoji emoji-id=\"5235728802142759605\">👀</tg-emoji> Обновление в последнее время <b>слишком большие</b>, поэтому посмотреть <b>Changelog</b> можете по кнопке ниже."
+changelogButton: "Посмотреть обновление"
+steamGameError: "<tg-emoji emoji-id=\"5458779239941681169\">😔</tg-emoji> Ошибка получения данных об игре, возможно, это из-за <b>региональных ограничений</b>. Попробуйте сменить регион в настройках"
+nowPlayingError: "<tg-emoji emoji-id=\"5994479184942993297\">💔</tg-emoji> Ошибка получения данных, убедитесь в правильности написания <b>вашего</b> ника"
+floodwaitError: "‼️ Эй, не так быстро! Подожди {seconds} секунд перед следующей попыткой"
+userIsAlsoAdmin: "<tg-emoji emoji-id=\"5289772607556568230\">😶</tg-emoji> О нет, огонь по своим... <b>Не буду этого делать</b>"
+userIsOwner1: "<tg-emoji emoji-id=\"5420140979707459246\">😳</tg-emoji> Не рискуй так, а то можно и отхватить"
+userIsOwner2: "<tg-emoji emoji-id=\"5368818100500178282\">😳</tg-emoji> Ну неее, это уже без меня"
+userIsOwner3: "<tg-emoji emoji-id=\"5235471280198658407\">👎</tg-emoji> Я подумаю"
+userIsOwner4: "<tg-emoji emoji-id=\"5199494946205247965\">🤡</tg-emoji> Подумай о семье"
+unwarnYourself: "<tg-emoji emoji-id=\"6035054256384380211\">😒</tg-emoji> Ам, не буду я снимать с тебя варны"
+previewButton: "👀 Предпросмотр"
+chatRulesNotSet: "<tg-emoji emoji-id=\"5289772607556568230\">😶</tg-emoji> Правила чата пока <b>не установлены</b>."
+useSetRulesWithReply: "<tg-emoji emoji-id=\"5879841310902324730\">✏️</tg-emoji> Используйте эту команду <b>ответом</b> на правила, которые надо установить."
+setRulesSuccess: "<tg-emoji emoji-id=\"5350572310627632617\">✅</tg-emoji> Правила чата успешно установлены."
+spotifyConnectAccount: "<tg-emoji emoji-id=\"5215574165595139507\">🎶</tg-emoji> Чтобы подключить аккаунт, перейдите по этой ссылке <a href=\"{link}\">https://spo...</a> (нажмите) и отправьте в <b>ЛС БОТА</b> команду, которую вы можете скопировать после регистрации на сайте."
+spotifyPremiumRequired: "🫩 Для работы этой функции нужен Spotify Premium"
