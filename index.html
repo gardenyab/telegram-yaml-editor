@@ -765,11 +765,17 @@
     function saveAllChanges() {
       if (!parsedData || !originalData) return;
 
-      const changedKeys = collectChangedKeys(parsedData, originalData);
+      let changedKeys = collectChangedKeys(parsedData, originalData);
 
       if (changedKeys.length === 0 && !isCustom) {
         alert('Нет изменённых ключей.');
         return;
+      }
+
+      if (isCustom) {
+        if (changedKeys.length === 0) {
+            changedKeys = originalData
+        }
       }
 
       const tgUserId = tg.initDataUnsafe?.user?.id || 'local_user';
