@@ -769,7 +769,7 @@
 
       const changedKeys = collectChangedKeys(parsedData, originalData);
 
-      if (changedKeys.length === 0 && isCustom) {
+      if (changedKeys.length === 0 && !isCustom) {
         alert('Нет изменённых ключей.');
         return;
       }
