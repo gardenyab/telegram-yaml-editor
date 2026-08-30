@@ -511,10 +511,8 @@
         presetSelect.value = 'none'; // Сброс селектора пресетов
         currentFileName = file.name;
         const reader = new FileReader();
-        reader.onload = (ev) => {
-            isCustom = true
-            loadYAMLString(ev.target.result)
-        };
+        isCustom = true
+        reader.onload = (ev) => loadYAMLString(ev.target.result);
         reader.readAsText(file, 'UTF-8');
       }
       fileInput.value = ''; 
