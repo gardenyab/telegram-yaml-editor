@@ -419,6 +419,7 @@
       
       <input type="file" id="file-input" accept=".yaml,.yml">
       <button class="btn" onclick="document.getElementById('file-input').click();">+ Свой файл</button>
+      <button class="btn btn-primary" id="global-save">Сохранить</button>
     </div>
   </header>
 
@@ -472,6 +473,7 @@
     tg.ready();
 
     let parsedData = null;
+    let originalData = null;
     let currentFileName = 'config.yaml';
     let activeTarget = null;
 
@@ -530,6 +532,7 @@
         }
       }
       parsedData = data;
+      originalData = deepClone(data);
       renderTree();
     }
 
@@ -709,24 +712,74 @@
           out = raw.trim() !== '' && !isNaN(n) && String(n) === raw.trim() ? n : raw;
         }
 
+        // Сохраняем изменение только в текущем состоянии редактора.
+        // В Telegram здесь ничего не отправляем.
         activeTarget.obj[activeTarget.key] = out;
 
         if (activeTarget.previewEl) {
           activeTarget.previewEl.textContent = cleanPreview(out);
         }
-        
-        // Отправка данных обратно в бота Telegram
-        const tgUserId = tg.initDataUnsafe?.user?.id || 'local_user';
-        const dataToSend = JSON.stringify({
-          userId: tgUserId,
-          key: activeTarget.key,
-          value: out
-        });
-        
-        tg.sendData(dataToSend);
       }
       closeModal();
     }
+
+    function deepClone(value) {
+      if (value === undefined) return undefined;
+      return JSON.parse(JSON.stringify(value));
+    }
+
+    function valuesEqual(a, b) {
+      return JSON.stringify(a) === JSON.stringify(b);
+    }
+
+    // Возвращает только изменённые конечные (листовые) ключи.
+    function collectChangedKeys(current, original, result = []) {
+      if (!current || typeof current !== 'object') return result;
+
+      const originalObj = (original && typeof original === 'object') ? original : {};
+
+      for (const key of Object.keys(current)) {
+        const currentValue = current[key];
+        const originalValue = originalObj[key];
+
+        if (currentValue !== null && typeof currentValue === 'object') {
+          collectChangedKeys(currentValue, originalValue, result);
+        } else if (!valuesEqual(currentValue, originalValue)) {
+          result.push({
+            key: key,
+            value: currentValue
+          });
+        }
+      }
+
+      return result;
+    }
+
+    function saveAllChanges() {
+      if (!parsedData || !originalData) return;
+
+      const changedKeys = collectChangedKeys(parsedData, originalData);
+
+      if (changedKeys.length === 0) {
+        alert('Нет изменённых ключей.');
+        return;
+      }
+
+      const tgUserId = tg.initDataUnsafe?.user?.id || 'local_user';
+
+      const dataToSend = JSON.stringify({
+        userId: tgUserId,
+        changes: changedKeys
+      });
+
+      tg.sendData(dataToSend);
+
+      // После отправки текущее состояние становится новым исходным.
+      originalData = deepClone(parsedData);
+    }
+
+    document.getElementById('global-save').addEventListener('click', saveAllChanges);
+
   </script>
 </body>
 </html>
