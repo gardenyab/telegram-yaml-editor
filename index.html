@@ -407,10 +407,10 @@
 <body>
 
   <header>
-    <h1>Gardi Locales</h1>
+    <h1 id="title-ok">Gardi Locales</h1>
     <div class="controls" id="app-controls">
       <select id="preset-select" class="btn">
-        <option value="none" disabled selected>Presets</option>
+        <option value="none" disabled selected id="presets-title">Presets</option>
         <option value="https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/ru.yaml">Русский</option>
         <option value="https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/eng.yaml">English</option>
         <option value="https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/ua.yaml">Українська</option>
@@ -433,7 +433,7 @@
     <div id="tree-container">
       <div class="empty-state">
         <div class="big">📄</div>
-        <div>Select a preset or load your own file.</div>
+        <div id="select-preset-or-file">Select a preset or load your own file.</div>
       </div>
     </div>
   </main>
@@ -464,6 +464,8 @@
   </div>
 
   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang') || 'ru';
     const tg = window.Telegram.WebApp;
     tg.expand();
     tg.ready();
@@ -488,6 +490,42 @@
     const modalPreview = document.getElementById('modal-preview');
     const tabIndicator = document.getElementById('tab-indicator');
 
+    async function loadLocales(lang) {
+        const url = "https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/" + lang + "Ed.yaml";
+        
+        let text; // Объявляем переменную заранее, чтобы она была видна везде в функции
+        
+        try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error('Ошибка сети при загрузке пресета');
+            text = await res.text(); // Записываем в нее текст
+        } catch (err) {
+            alert('Не удалось загрузить пресет: ' + err.message);
+            return; // Обязательно прерываем выполнение, если файл не скачался
+        }
+
+        let data;
+        try {
+            data = jsyaml.load(text);
+        } catch (err) {
+            try {
+            data = jsyaml.load(text, { json: true });
+            } catch (e2) {
+            alert('Ошибка синтаксиса YAML: ' + e2.message);
+            return;
+            }
+        }
+        
+        parsedData = data;
+
+        // Безопасное обновление текста кнопки (если ключ в yaml существует)
+        if (parsedData) {
+            console.log(parsedData)
+            document.getElementById('presets-title').textContent = parsedData["presetsTitle"];
+            document.getElementById('global-save').textContent = parsedData["saveAll"];
+            document.getElementById('select-preset-or-file').textContent = parsedData["selectPresetOrFile"];
+        }
+        }
     /* ---------- Загрузка пресетов ---------- */
     presetSelect.addEventListener('change', async (e) => {
       const url = e.target.value;
@@ -649,12 +687,6 @@
     }
 
     treeSearch.addEventListener('input', () => filterTree(treeSearch.value.trim().toLowerCase()));
-    document.getElementById('expand-all').addEventListener('click', () => {
-      treeContainer.querySelectorAll('details').forEach((d) => (d.open = true));
-    });
-    document.getElementById('collapse-all').addEventListener('click', () => {
-      treeContainer.querySelectorAll('details').forEach((d) => (d.open = false));
-    });
 
     /* ---------- Вкладки и модалка ---------- */
     function moveTabIndicator(activeBtn) {
@@ -793,6 +825,7 @@
 
     document.getElementById('global-save').addEventListener('click', saveAllChanges);
 
+    loadLocales(lang)
   </script>
 </body>
 </html>
