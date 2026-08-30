@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gardi Locales</title>
-
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400;500;700&family=Google+Sans+Flex:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardi Locales</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400;500;700&family=Google+Sans+Flex:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <style>
     :root {
-      /* Динамические цвета Telegram с fallback'ом на оригинальную палитру */
+      
       --bg-color: var(--tg-theme-bg-color, #0e0f13);
       --bg-elev: var(--tg-theme-secondary-bg-color, #121319);
       --panel-bg: var(--tg-theme-secondary-bg-color, #16181f);
@@ -28,7 +25,7 @@
 
       --accent: var(--tg-theme-button-color, #3b9eff);
       --accent-hover: var(--tg-theme-button-color, #59aeff);
-      --accent-soft: rgba(59, 158, 255, 0.12); /* Прозрачный акцент, можно оставить как есть */
+      --accent-soft: rgba(59, 158, 255, 0.12); 
       
       --danger: var(--tg-theme-destructive-text-color, #ff6b6b);
       --warn: #ffcf5c;
@@ -40,7 +37,7 @@
       --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.35);
       --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 
-      /* Документ-превью («бумажная» страница статьи) */
+      
       --doc-bg: var(--tg-theme-secondary-bg-color, #fbfbf7);
       --doc-text: var(--tg-theme-text-color, #1f2328);
       --doc-muted: var(--tg-theme-hint-color, #656d76);
@@ -75,7 +72,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ---------- Header ---------- */
+    
     header {
       position: sticky;
       top: 0;
@@ -139,7 +136,7 @@
 
     main { flex: 1; padding: 1.5rem; overflow-y: auto; }
 
-    /* ---------- Панель управления деревом ---------- */
+    
     .tree-controls {
       display: flex;
       gap: 0.6rem;
@@ -175,7 +172,7 @@
     }
     .stat-chip b { color: var(--text-color); font-weight: 600; }
 
-    /* Баннер о дубликатах */
+    
     .banner {
       display: none;
       margin-bottom: 1rem;
@@ -197,7 +194,7 @@
       margin-top: 0.2rem;
     }
 
-    /* Разворачиваемые узлы */
+    
     details > summary {
       cursor: pointer;
       color: var(--text-color);
@@ -233,7 +230,7 @@
       background: var(--accent-soft);
     }
 
-    /* Листовые ключи */
+    
     .node-item {
       position: relative;
       display: flex;
@@ -285,7 +282,7 @@
     @keyframes itemIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
-    /* ---------- Модальное окно ---------- */
+    
     .modal {
       display: none;
       position: fixed;
@@ -403,48 +400,45 @@
 
     .hidden { display: none !important; }
   </style>
-</head>
-<body>
+    </head>
+    <body>
 
-  <header>
-    <h1 id="title-ok">Gardi Locales</h1>
-    <div class="controls" id="app-controls">
-      <select id="preset-select" class="btn">
-        <option value="none" disabled selected id="presets-title">Presets</option>
-        <option value="https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/ru.yaml">Русский</option>
-        <option value="https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/eng.yaml">English</option>
-        <option value="https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/ua.yaml">Українська</option>
-      </select>
-      
-      <input type="file" id="file-input" accept=".yaml,.yml">
-      <button class="btn" onclick="document.getElementById('file-input').click();">+</button>
-      <button class="btn btn-primary" id="global-save" onclick="saveAllChanges()">Save all</button>
-    </div>
-  </header>
+    <header>
+        <h1>Gardi Locales</h1>
+            <div class="controls" id="app-controls">
+                <input type="file" id="file-input" accept=".yaml,.yml">
+                <select id="preset-select" class="btn">
+                    <option value="none" disabled selected id="presets-title">Presets</option>
+                    <option value="https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/ru.yaml">Русский</option>
+                    <option value="https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/eng.yaml">English</option>
+                    <option value="https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/ua.yaml">Українська</option>
+                </select>
+                <button class="btn" onclick="document.getElementById('file-input').click();">+</button>
+                <button class="btn btn-primary" id="global-save" onclick="saveAllChanges()">Save all</button>
+            </div>
+    </header>
 
-  <main>
-    <div class="banner" id="dup-banner"></div>
+    <main>
+        <div class="banner" id="dup-banner"></div>
+        <div class="tree-controls hidden" id="tree-controls">
+            <input type="text" id="tree-search" placeholder="Search keys or values">
+            <span class="stat-chip" id="stat-chip">Keys: <b id="stat-count">0</b></span>
+        </div>
 
-    <div class="tree-controls hidden" id="tree-controls">
-      <input type="text" id="tree-search" placeholder="Search keys or values">
-      <span class="stat-chip" id="stat-chip">Keys: <b id="stat-count">0</b></span>
-    </div>
-
-    <div id="tree-container">
-      <div class="empty-state">
-        <div class="big">📄</div>
-        <div id="select-preset-or-file">Select a preset or load your own file.</div>
-      </div>
-    </div>
-  </main>
+        <div id="tree-container">
+        <div class="empty-state">
+            <div class="big">📄</div>
+            <div id="select-preset-or-file">Select a preset or load your own file</div>
+        </div>
+    </main>
 
   <div class="modal" id="editor-modal">
     <div class="modal-card">
       <div class="modal-header">
         <div class="modal-title" id="modal-key-path">Key: <b>key</b></div>
         <div class="controls">
-          <button class="btn" onclick="closeModal()">Cancel</button>
-          <button class="btn btn-primary" onclick="saveModalValue()">Save</button>
+          <button class="btn" id="cancel-button" onclick="closeModal()">Cancel</button>
+          <button class="btn btn-primary" id="save-button" onclick="saveModalValue()">Save</button>
         </div>
       </div>
 
@@ -493,15 +487,15 @@
     async function loadLocales(lang) {
         const url = "https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/" + lang + "Ed.yaml";
         
-        let text; // Объявляем переменную заранее, чтобы она была видна везде в функции
+        let text; 
         
         try {
             const res = await fetch(url);
             if (!res.ok) throw new Error('Ошибка сети при загрузке пресета');
-            text = await res.text(); // Записываем в нее текст
+            text = await res.text(); 
         } catch (err) {
             alert('Не удалось загрузить пресет: ' + err.message);
-            return; // Обязательно прерываем выполнение, если файл не скачался
+            return; 
         }
 
         let data;
@@ -518,15 +512,20 @@
         
         parsedData = data;
 
-        // Безопасное обновление текста кнопки (если ключ в yaml существует)
+        
         if (parsedData) {
-            console.log(parsedData)
+            document.getElementById('modal-textarea').placeholder = parsedData["enterText"];
+            document.getElementById('btn-mode-preview').placeholder = parsedData["preview"];
+            document.getElementById('btn-mode-edit').placeholder = parsedData["htmlCode"];
+            document.getElementById('cancel-button').placeholder = parsedData["cancelButton"];
+            document.getElementById('save-button').placeholder = parsedData["saveButton"];
+            document.getElementById('tree-search').placeholder = parsedData["searchPlaceholder"];
             document.getElementById('presets-title').textContent = parsedData["presetsTitle"];
             document.getElementById('global-save').textContent = parsedData["saveAll"];
             document.getElementById('select-preset-or-file').textContent = parsedData["selectPresetOrFile"];
         }
         }
-    /* ---------- Загрузка пресетов ---------- */
+    
     presetSelect.addEventListener('change', async (e) => {
       const url = e.target.value;
       if (url === 'none') return;
@@ -542,11 +541,11 @@
       }
     });
 
-    /* ---------- Загрузка своего файла ---------- */
+    
     fileInput.addEventListener('change', (e) => {
       const file = e.target.files[0];
       if (file) {
-        presetSelect.value = 'none'; // Сброс селектора пресетов
+        presetSelect.value = 'none'; 
         currentFileName = file.name;
         const reader = new FileReader();
         isCustom = true
@@ -590,7 +589,7 @@
       return n;
     }
 
-    /* ---------- Рендер дерева ---------- */
+    
     function renderTree() {
       treeContainer.innerHTML = '';
       const hasData = parsedData !== null && typeof parsedData === 'object';
@@ -662,7 +661,7 @@
       return fragment;
     }
 
-    /* ---------- Поиск / сворачивание ---------- */
+    
     function filterTree(term) {
       treeContainer.querySelectorAll(':scope > .entry').forEach((entry) => matchEntry(entry, term));
     }
@@ -688,7 +687,7 @@
 
     treeSearch.addEventListener('input', () => filterTree(treeSearch.value.trim().toLowerCase()));
 
-    /* ---------- Вкладки и модалка ---------- */
+    
     function moveTabIndicator(activeBtn) {
       tabIndicator.style.width = activeBtn.offsetWidth + 'px';
       tabIndicator.style.transform = `translateX(${activeBtn.offsetLeft - 3}px)`;
@@ -771,7 +770,7 @@
       return JSON.stringify(a) === JSON.stringify(b);
     }
 
-    // Возвращает только изменённые конечные (листовые) ключи.
+    
     function collectChangedKeys(current, original, result = []) {
       if (!current || typeof current !== 'object') return result;
 
@@ -819,7 +818,7 @@
 
       tg.sendData(dataToSend);
 
-      // После отправки текущее состояние становится новым исходным.
+      
       originalData = deepClone(parsedData);
     }
 
