@@ -472,6 +472,7 @@
     let originalData = null;
     let currentFileName = 'config.yaml';
     let activeTarget = null;
+    let isCustom = false;
 
     const presetSelect = document.getElementById('preset-select');
     const fileInput = document.getElementById('file-input');
@@ -496,6 +497,7 @@
         if (!res.ok) throw new Error('Ошибка сети при загрузке пресета');
         const text = await res.text();
         currentFileName = url.split('/').pop();
+        isCustom = false
         loadYAMLString(text);
       } catch (err) {
         alert('Не удалось загрузить пресет: ' + err.message);
@@ -509,7 +511,10 @@
         presetSelect.value = 'none'; // Сброс селектора пресетов
         currentFileName = file.name;
         const reader = new FileReader();
-        reader.onload = (ev) => loadYAMLString(ev.target.result);
+        reader.onload = (ev) => {
+            isCustom = true
+            loadYAMLString(ev.target.result)
+        };
         reader.readAsText(file, 'UTF-8');
       }
       fileInput.value = ''; 
@@ -764,7 +769,7 @@
 
       const changedKeys = collectChangedKeys(parsedData, originalData);
 
-      if (changedKeys.length === 0) {
+      if (changedKeys.length === 0 && isCustom) {
         alert('Нет изменённых ключей.');
         return;
       }
