@@ -10,3 +10,5 @@ selectPresetOrFile: "Виберіть із пресетів або завант�
 keysTitle: "Ключі"
 emptyFile: "Порожній або некоректний файл"
 previewUnavailable: "Наразі недоступно"
+downloadButton: "Скачати"
+downloadInfo: "Надішліть цей файл боту з командою /setTheme"

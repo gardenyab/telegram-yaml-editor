@@ -542,6 +542,7 @@
                 </select>
                 <button class="btn" onclick="document.getElementById('file-input').click();">+</button>
                 <button class="btn btn-primary" id="global-save" onclick="saveAllChanges()">Save all</button>
+                <button class="btn btn-primary" id="download-button" onclick="downloadYamlFile()">Download</button>
             </div>
     </header>
 
@@ -641,6 +642,7 @@
             locales = data;
             
             if (locales) {
+                document.getElementById('download-button').textContent = locales["downloadButton"];
                 document.getElementById('keys-title').textContent = locales["keysTitle"];
                 document.getElementById('modal-textarea').placeholder = locales["enterText"];
                 document.getElementById('btn-mode-preview').textContent = locales["preview"];
@@ -943,6 +945,28 @@
             tg.sendData(dataToSend);
 
             originalData = deepClone(parsedData);
+        }
+        
+        function downloadYamlFile() {
+            if (!parsedData) {
+                return;
+            }
+            const yamlString = jsyaml.dump(parsedData);
+
+            const blob = new Blob([yamlString], { type: 'text/yaml;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+
+            const tgUserId = tg.initDataUnsafe?.user?.id || 'theme';
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = tgUserId.toString() + ".yaml" || 'config.yaml';
+            document.body.appendChild(a);
+            a.click();
+            alert(locales["downloadInfo"])
+
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            tg.close();
         }
 
         loadLocales(lang)

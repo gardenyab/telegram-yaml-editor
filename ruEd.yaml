@@ -10,3 +10,5 @@ selectPresetOrFile: "Выберите из пресетов или загруз�
 keysTitle: "Ключи"
 emptyFile: "Пустой или некорректный файл"
 previewUnavailable: "На данный момент недоступно"
+downloadButton: "Скачать"
+downloadInfo: "Отправьте этот файл боту с командой /setTheme"
