@@ -541,8 +541,8 @@
                     <option value="https://raw.githubusercontent.com/gardenyab/telegram-yaml-editor/refs/heads/main/ua.yaml">Українська</option>
                 </select>
                 <button class="btn" onclick="document.getElementById('file-input').click();">+</button>
+                <button class="btn" onclick="downloadYamlFile()">▾</button>
                 <button class="btn btn-primary" id="global-save" onclick="saveAllChanges()">Save all</button>
-                <button class="btn btn-primary" id="download-button" onclick="downloadYamlFile()">Download</button>
             </div>
     </header>
 
@@ -642,7 +642,6 @@
             locales = data;
             
             if (locales) {
-                document.getElementById('download-button').textContent = locales["downloadButton"];
                 document.getElementById('keys-title').textContent = locales["keysTitle"];
                 document.getElementById('modal-textarea').placeholder = locales["enterText"];
                 document.getElementById('btn-mode-preview').textContent = locales["preview"];
